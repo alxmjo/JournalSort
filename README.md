@@ -1,5 +1,7 @@
 # JournalSort
-JournalSort is a simple C++ script which takes a group of journal entries grouped by day of the year, and organizes them into a single, chronological text file.
+JournalSort is a simple C++ program which takes a group of journal entries grouped by day of the year, and organizes them into a single, chronological text file. 
+
+I normally keep my journal organized as 366 plain text files (one for each day of the year, including February 29). The entries are not chronological (since they're broken out into individual files for each date), so every few years I'd like to compile all of these into a single, chronological document. That's what this program does.
 
 ### Input
 
