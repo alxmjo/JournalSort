@@ -6,20 +6,22 @@
 #include <string>
 #include <map>
 #include <iomanip>
+#include <map>
 
 using namespace std;
 
 int getMonthIndex(string);
-void saveEntries(string);
+void saveEntries(map<string, string>&, string);
 
 int main()
 {
-    saveEntries("001.txt");
+    map<string, string> journal;
+    saveEntries(journal, "001.txt");
 
     return 0;
 }
 
-void saveEntries(string filename) {
+void saveEntries(map<string, string>& journal, string filename) {
     string month;
     int day;
 
@@ -52,9 +54,21 @@ void saveEntries(string filename) {
 
     for ( ; position != end; position++)
     {
-        cout << "Date: " << position->str(1) << setfill('0') << setw(2) << getMonthIndex(month) << day << endl;
-        cout << "Entry: " << position->str(2) <<endl;
+        stringstream dateSS;
+
+        string date;
+        string entry;
+
+        dateSS << position->str(1) << setfill('0') << setw(2) << getMonthIndex(month) << day;
+
+        date = dateSS.str();
+        entry = position->str(2);
+
+        cout << "Date: " << date << endl;
+        cout << "Entry: " << entry << endl;
         cout << endl;
+
+        // TODO: Store date and entry in map
     }
 }
 
