@@ -3,6 +3,13 @@
 # Prerequisites
 *.d
 
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
 # Compiled Object files
 *.slo
 *.lo
