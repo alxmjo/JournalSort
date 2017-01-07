@@ -14,9 +14,15 @@ int main()
 {
     map<string, string> journal;
 
-    // TODO: For loop to go through all text files
+    for (int i = 0; i < 366; i++) {
+        stringstream fileNameSS;
+        string fileName;
 
-    saveEntries(journal, "001.txt");
+        fileNameSS << "entries/" << setfill('0') << setw(3) << i << ".txt";
+        fileName = fileNameSS.str();
+
+        saveEntries(journal, fileName);
+    }
 
     // Print journal contents
     for (const auto &p : journal) {
@@ -64,7 +70,7 @@ void saveEntries(map<string, string>& journal, string filename) {
         string date;
         string entry;
 
-        dateSS << position->str(1) << setfill('0') << setw(2) << getMonthIndex(month) << day;
+        dateSS << position->str(1) << setfill('0') << setw(2) << getMonthIndex(month) << setfill('0') << setw(2) << day;
 
         date = dateSS.str();
         entry = position->str(2);
