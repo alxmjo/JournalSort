@@ -1,12 +1,9 @@
 #include <regex>
-#include <iterator>
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <string>
 #include <map>
 #include <iomanip>
-#include <map>
 
 using namespace std;
 
@@ -16,7 +13,15 @@ void saveEntries(map<string, string>&, string);
 int main()
 {
     map<string, string> journal;
+
+    // TODO: For loop to go through all text files
+
     saveEntries(journal, "001.txt");
+
+    // Print journal contents
+    for (const auto &p : journal) {
+        cout << p.first << " " << p.second << endl;
+    }
 
     return 0;
 }
@@ -64,11 +69,7 @@ void saveEntries(map<string, string>& journal, string filename) {
         date = dateSS.str();
         entry = position->str(2);
 
-        cout << "Date: " << date << endl;
-        cout << "Entry: " << entry << endl;
-        cout << endl;
-
-        // TODO: Store date and entry in map
+        journal[date] = entry;
     }
 }
 
