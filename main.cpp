@@ -15,6 +15,8 @@ int main()
 {
     map<string, string> journal; // For storing journal entries
 
+    ofstream outputFile; // For outputting to file
+
     // Loop through all journal entries
     for (int i = 0; i < 366; i++) {
 
@@ -29,10 +31,14 @@ int main()
         saveEntries(journal, fileName);
     }
 
-    // Print journal contents
-    for (const auto &p : journal) {
-        cout << dateToString(p.first) << ": " << p.second << endl;
+    // Print journal contents to file
+    outputFile.open("journal.txt");
+    for (const auto &entry : journal) {
+        outputFile << dateToString(entry.first) << ": " << entry.second << endl << endl;
     }
+
+    // Close output file
+    outputFile.close();
 
     return 0;
 }
