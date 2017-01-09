@@ -35,7 +35,7 @@ Thursday, August 13, 2015: My pet turtle died.
 
 ### Procedure
 1. Download notes from app.simplenote.com
-2. Copy journal files to a new directory with `cp \`grep -l 'Done: ' A/*\` entries/`
+2. Copy journal files to a new directory with ````cp \`grep -l 'Done: ' A/*\` entries/````
 3. Verify presence of 366 .txt files in entries folder
 4. Rename .txt files sequentially from 001.txt to 366.txt using Automator
 5. Move entries to program root
