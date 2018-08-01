@@ -35,8 +35,12 @@ Thursday, August 13, 2015: My pet turtle died.
 
 ### Procedure
 1. Download notes from app.simplenote.com
-2. Copy journal files to a new directory with ````mv `grep -lir 'Done: ' source-dir/*` destination-dir/````
-3. Verify presence of 366 .txt files in entries folder
+2. Copy journal files to an `entries` directory with ````mv `grep -lir 'Done: ' source-dir/*` path-to-dir/entries````
+3. Verify presence of 366 .txt files in `entries` folder
 4. Rename .txt files sequentially from 001.txt to 366.txt using Automator
-5. Move entries to program root
-6. Run main.cpp
+  1. Ask for Finder Items...
+  2. Get Folder Contents...
+  3. Rename Finder Items: Make Sequential...
+5. Move `entries` directory to same folder as program root
+6. Compile program with `$ g++ -std=c++11 main.cpp -o app`
+6. Run app with `$ ./app`
